@@ -1,5 +1,7 @@
 # Fake Stream Chat Overlay
 
+![Fake Stream Chat Overlay demo](./fake-stream-chat-overlay.gif)
+
 게임 유튜버/스트리머 영상 촬영용 투명 채팅 오버레이 프로그램입니다.
 
 실제 라이브처럼 보이는 멀티 플랫폼 채팅창, 시청자 수, 도네이션 알림을 Windows 화면 위에 띄울 수 있습니다.
