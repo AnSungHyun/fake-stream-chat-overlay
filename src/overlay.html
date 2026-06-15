@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Overlay</title>
+    <link rel="stylesheet" href="./overlay.css" />
+  </head>
+  <body>
+    <main id="overlay" class="overlay">
+      <header class="viewer-strip">
+        <div class="live-dot"></div>
+        <span>LIVE</span>
+        <strong id="viewerCount">127</strong>
+        <span>watching</span>
+      </header>
+
+      <section id="chatList" class="chat-list"></section>
+
+      <button class="resize-handle resize-n" data-resize="n" title="세로 크기 조절"></button>
+      <button class="resize-handle resize-e" data-resize="e" title="가로 크기 조절"></button>
+      <button class="resize-handle resize-s" data-resize="s" title="세로 크기 조절"></button>
+      <button class="resize-handle resize-w" data-resize="w" title="가로 크기 조절"></button>
+      <button class="resize-handle resize-ne" data-resize="ne" title="크기 조절"></button>
+      <button class="resize-handle resize-se" data-resize="se" title="크기 조절"></button>
+      <button class="resize-handle resize-sw" data-resize="sw" title="크기 조절"></button>
+      <button class="resize-handle resize-nw" data-resize="nw" title="크기 조절"></button>
+    </main>
+    <script src="./overlay.js"></script>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake Stream Chat Control</title>
+    <link rel="stylesheet" href="./control.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="header">
+        <div>
+          <p class="eyebrow">Creator Overlay Tool</p>
+          <h1>Fake Stream Chat</h1>
+        </div>
+        <button id="visibilityButton" class="icon-button" title="오버레이 보이기/숨기기">◐</button>
+      </header>
+
+      <section class="panel actions">
+        <button id="burstButton">샘플 채팅 붓기</button>
+        <button id="resetButton">채팅 비우기</button>
+        <button id="recenterButton">오버레이 위치 초기화</button>
+      </section>
+
+      <section class="panel">
+        <h2>채팅 흐름</h2>
+        <label>
+          <span>채팅 인원</span>
+          <input id="chatPopulation" type="range" min="5" max="150" step="1" />
+          <output for="chatPopulation"></output>
+        </label>
+        <label>
+          <span>채팅 간격</span>
+          <input id="intervalMs" type="range" min="120" max="4000" step="20" />
+          <output for="intervalMs"></output>
+        </label>
+        <label>
+          <span>애니메이션 속도</span>
+          <input id="animationSpeed" type="range" min="80" max="1500" step="20" />
+          <output for="animationSpeed"></output>
+        </label>
+        <label>
+          <span>최대 표시 줄</span>
+          <input id="maxMessages" type="range" min="8" max="80" step="1" />
+          <output for="maxMessages"></output>
+        </label>
+      </section>
+
+      <section class="panel">
+        <h2>오버레이</h2>
+        <label>
+          <span>채팅창 투명도</span>
+          <input id="opacity" type="range" min="0" max="100" step="1" />
+          <output for="opacity"></output>
+        </label>
+        <label>
+          <span>글자 크기</span>
+          <input id="fontSize" type="range" min="12" max="24" step="1" />
+          <output for="fontSize"></output>
+        </label>
+        <div class="toggle-grid">
+          <label class="check"><input id="alwaysOnTop" type="checkbox" />항상 위</label>
+          <label class="check"><input id="clickThrough" type="checkbox" />클릭 통과</label>
+          <label class="check"><input id="compactMode" type="checkbox" />컴팩트</label>
+          <label class="check"><input id="showViewerCount" type="checkbox" />시청자 수</label>
+          <label class="check"><input id="showPlatformIcon" type="checkbox" />플랫폼 뱃지</label>
+          <label class="check"><input id="randomNameColors" type="checkbox" />랜덤 아이디 색</label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>플랫폼</h2>
+        <div class="platforms">
+          <label class="platform youtube"><input id="platform-youtube" type="checkbox" />YouTube</label>
+          <label class="platform chzzk"><input id="platform-chzzk" type="checkbox" />CHZZK</label>
+          <label class="platform soop"><input id="platform-soop" type="checkbox" />SOOP</label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>채팅 성격</h2>
+        <div class="toggle-grid">
+          <label class="check"><input id="tone-hype" type="checkbox" />감탄사</label>
+          <label class="check"><input id="tone-question" type="checkbox" />질문</label>
+          <label class="check"><input id="tone-gameplay" type="checkbox" />화면 반응</label>
+          <label class="check"><input id="tone-casual" type="checkbox" />잡담</label>
+        </div>
+        <label class="text-field">
+          <span>화면 키워드</span>
+          <textarea id="keywords" rows="3"></textarea>
+        </label>
+        <label class="text-field">
+          <span>스트리머 호칭</span>
+          <input id="streamerName" type="text" />
+        </label>
+      </section>
+
+      <section class="panel">
+        <h2>시청자 수</h2>
+        <label>
+          <span>시작 시청자</span>
+          <input id="viewerCount" type="range" min="0" max="5000" step="1" />
+          <output for="viewerCount"></output>
+        </label>
+        <label>
+          <span>변동 폭</span>
+          <input id="viewerVariance" type="range" min="0" max="150" step="1" />
+          <output for="viewerVariance"></output>
+        </label>
+      </section>
+
+      <section class="panel">
+        <h2>도네이션</h2>
+        <div class="donation-actions">
+          <label class="check"><input id="donationEnabled" type="checkbox" />도네이션 알림 사용</label>
+          <button id="donationButton">도네이션 테스트</button>
+          <button id="donationRecenterButton">도네이션 위치 초기화</button>
+        </div>
+        <label>
+          <span>알림 간격</span>
+          <input id="donationIntervalMinutes" type="range" min="1" max="30" step="1" />
+          <output for="donationIntervalMinutes"></output>
+        </label>
+        <label>
+          <span>표시 시간</span>
+          <input id="donationDurationSec" type="range" min="2" max="15" step="1" />
+          <output for="donationDurationSec"></output>
+        </label>
+        <label>
+          <span>알림 투명도</span>
+          <input id="donationOpacity" type="range" min="20" max="100" step="1" />
+          <output for="donationOpacity"></output>
+        </label>
+        <label>
+          <span>최소 금액</span>
+          <input id="donationMinAmount" type="range" min="1000" max="50000" step="1000" />
+          <output for="donationMinAmount"></output>
+        </label>
+        <label>
+          <span>최대 금액</span>
+          <input id="donationMaxAmount" type="range" min="1000" max="100000" step="1000" />
+          <output for="donationMaxAmount"></output>
+        </label>
+      </section>
+
+      <section class="panel note">
+        <h2>LLM 확장 메모</h2>
+        <p>다음 단계에서는 현재 화면 스크린샷을 캡처해 키워드를 만들고, 그 키워드로 채팅 문장을 생성하는 API 연결부를 붙이면 됩니다.</p>
+      </section>
+    </main>
+    <script src="./control.js"></script>
+  </body>
+</html>

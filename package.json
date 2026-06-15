@@ -1,0 +1,21 @@
+{
+  "name": "fake-stream-chat-overlay",
+  "version": "0.1.0",
+  "description": "Transparent fake multi-platform stream chat overlay for game creator videos.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron ."
+  },
+  "keywords": [
+    "electron",
+    "overlay",
+    "stream",
+    "chat"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^37.1.0"
+  }
+}
